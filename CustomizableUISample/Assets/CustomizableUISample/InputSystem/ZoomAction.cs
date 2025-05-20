@@ -17,6 +17,8 @@ public class ZoomAction : MonoBehaviour
 
     private InputAction _zoomAction;
 
+    private float _preventActionValue;
+
     void Start()
     {
         var map = _actionAsset.FindActionMap("UI");
@@ -29,15 +31,17 @@ public class ZoomAction : MonoBehaviour
     private void Zoom(InputAction.CallbackContext context)
     {
         // ズーム対象のUIを取得する
-        var position = Mouse.current.position.ReadValue();
+        var position = Pointer.current.position.ReadValue();
         var uiObject = _uiRetriever.GetTargetUI(position);
-        if(uiObject == null)
+        if(uiObject == null || uiObject == ControlableUIEnum.CameraRenderPanel)
             return;
 
         // ズームを行う
-        var actionValue = context.ReadValue<Vector2>();
-        Debug.Log(actionValue.y);
-        _tableScaleController.AdjustScale(actionValue.y);
-        // _tableFontSizeController.AdjustSize(actionValue.y);
+        var actionValue = context.ReadValue<float>();
+        //フォントサイズとテーブルサイズのスケールを変更する（片方はコメントアウトしている）
+        _tableScaleController.AdjustScale(_preventActionValue - actionValue);
+        // _tableFontSizeController.AdjustSize(_preventActionValue - actionValue);
+
+        _preventActionValue = actionValue;
     }
 }

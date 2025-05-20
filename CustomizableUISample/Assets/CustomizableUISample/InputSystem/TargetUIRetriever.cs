@@ -27,17 +27,22 @@ public class TargetUIRetriever : MonoBehaviour
         _raycaster = _canvas.GetComponent<GraphicRaycaster>();
     }
 
-    public ControlableUIEnum? GetTargetUI(Vector2 screenPosition){
+    public ControlableUIEnum? GetTargetUI(Vector2 screenPosition)
+    {
         var hits = new List<RaycastResult>();
 
         var eventData = new PointerEventData(_eventSystem);
         eventData.position = screenPosition;
         _raycaster.Raycast(eventData, hits);
 
-        foreach(var hit in hits){
-            if(hit.gameObject == _tablePanel){
+        foreach (var hit in hits)
+        {
+            if (hit.gameObject == _tablePanel)
+            {
                 return ControlableUIEnum.TablePanel;
-            }else if(hit.gameObject == _cameraRenderPanel){
+            }
+            else if (hit.gameObject == _cameraRenderPanel)
+            {
                 return ControlableUIEnum.CameraRenderPanel;
             }
         }

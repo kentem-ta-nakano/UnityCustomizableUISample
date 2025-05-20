@@ -573,7 +573,7 @@
                     "name": "Zoom",
                     "type": "Value",
                     "id": "63ca317a-e35b-4303-acca-cd3a40a576cb",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -999,15 +999,70 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "",
-                    "id": "f8004b4d-b5b3-4af9-aacf-eec17f550bba",
-                    "path": "<Mouse>/scroll",
+                    "name": "Multi Touch Distance",
+                    "id": "8624cb74-baf0-4c3b-947b-49412079214a",
+                    "path": "MultiTouchDistance",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Zoom",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "touch0",
+                    "id": "b7a4c9a9-fa9c-4a02-8c72-a232aed5b7c1",
+                    "path": "<Touchscreen>/touch0",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Zoom",
                     "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "touch1",
+                    "id": "14608cca-0c5b-4347-adac-5636f667dd8f",
+                    "path": "<Touchscreen>/touch1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Zoom",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "MouseRightClick",
+                    "id": "c8481381-3f93-4226-8090-3dc714d04c81",
+                    "path": "OneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Zoom",
+                    "isComposite": true,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "b8f03f8c-16e4-4e46-838e-2927394e08ec",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Zoom",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "c9e8eb67-91da-4fbb-b2e3-cec2e5ba358f",
+                    "path": "<Mouse>/position/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Zoom",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }
